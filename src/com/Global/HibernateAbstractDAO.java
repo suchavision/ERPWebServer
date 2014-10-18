@@ -53,6 +53,16 @@ public abstract class HibernateAbstractDAO {
 		query.setParameter(uniqueColumnName, uniqueValue);
 		return query.uniqueResult();
 	}
+	
+	public Object getObjects(Class<?> cls, String columnName, Serializable columnValue) {
+		String clsName = cls.getName();
+		String alias = clsName.substring(clsName.lastIndexOf(".") + 1);
+		String queryString = "FROM " + clsName + " " + alias + " WHERE "
+				+ columnName + " = " + ":" + columnName;
+		Query query = createQuery(queryString);
+		query.setParameter(columnName, columnValue);
+		return query.list();
+	}
 
 	public Query createQuery(String queryString) {
 		return getSession().createQuery(queryString);

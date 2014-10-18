@@ -40,7 +40,8 @@ public class WHPurchaseOrder extends OrderApp4 {
 	private float freight;          //运   费
 	
 	private float deliveryTotal;    //进货总计
-	private float totalPay;         //应   付
+	private float shouldPay;		//应	  付
+	private float totalPay;         //共   付
 	private float storageTotal;     //入库总计
 	
 	private Set<WHPurchaseBill> WHPurchaseBills;    //进货的Bill
@@ -100,7 +101,12 @@ public class WHPurchaseOrder extends OrderApp4 {
 	public void setDeliveryTotal(float deliveryTotal) {
 		this.deliveryTotal = deliveryTotal;
 	}
-	
+	public float getShouldPay() {
+		return shouldPay;
+	}
+	public void setShouldPay(float shouldPay) {
+		this.shouldPay = shouldPay;
+	}
 	public float getTotalPay() {
 		return totalPay;
 	}
