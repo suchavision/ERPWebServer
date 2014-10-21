@@ -58,9 +58,9 @@ public class WHPurchaseOrderCommandRead extends WarehouseCommandRead {
 			float unPay = bill.getRealPaid();
 			
 			ain.add(payDate);
+			ain.add(paymentOrderNO);
 			ain.add(shouldPay);
 			ain.add(unPay);
-			ain.add(paymentOrderNO);
 			list.add(ain);
 		}
 		
