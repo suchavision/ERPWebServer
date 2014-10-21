@@ -4,6 +4,7 @@ import j2se.modules.Introspector.IntrospectHelper;
 
 import com.opensymphony.xwork2.Action;
 import com.xinyuan.Util.ActionHelper;
+import com.xinyuan.action.command.Command;
 import com.xinyuan.dao.SuperDAO;
 import com.xinyuan.dao.impl.SuperDAOIMP;
 import com.xinyuan.message.ConfigConstants;
@@ -58,7 +59,8 @@ public class SuperAction extends ActionBase {
 	private String runCommand(String type) throws Exception {
 		String categoryName = IntrospectHelper.getShortClassName(this).replace(ConfigConstants.ACTION_CLASS_SUFFIX, "");
 		String preferredModelName = IntrospectHelper.getShortClassName(models.get(0));
-		ActionHelper.getCommand(categoryName, preferredModelName, type).execute(dao, responseMessage, requestMessage, models, modelsKeys);
+		Command command = ActionHelper.getCommand(categoryName, preferredModelName, type);
+		command.execute(dao, responseMessage, requestMessage, models, modelsKeys);
 		return Action.NONE;
 	}
 }

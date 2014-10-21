@@ -7,9 +7,12 @@ import com.xinyuan.model.Approval.Approvals;
 
 public class ApprovalDAOIMP extends ModelDAOIMP implements ApprovalDAO {
 
-	public Approvals getApprovals(Serializable id) {
-		return (Approvals)super.getObject(Approvals.class, id);
+	public Approvals getApprovals(Serializable id)
+	{
+		return (Approvals)super.getObject(Approvals.class,id);
+		
+	}
 	}
 
 	
-}
+
