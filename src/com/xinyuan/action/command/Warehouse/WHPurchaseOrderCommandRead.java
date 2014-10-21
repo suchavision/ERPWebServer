@@ -1,7 +1,9 @@
 package com.xinyuan.action.command.Warehouse;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -9,6 +11,7 @@ import java.util.Set;
 import org.hibernate.Query;
 
 import com.Global.HibernateInitializer;
+import com.xinyuan.Util.AppModelsHelper;
 import com.xinyuan.action.command.category.WarehouseCommandRead;
 import com.xinyuan.dao.SuperDAO;
 import com.xinyuan.dao.impl.SuperDAOIMP;
@@ -24,9 +27,15 @@ public class WHPurchaseOrderCommandRead extends WarehouseCommandRead {
 	public void execute(SuperDAO dao, ResponseMessage responseMessage, RequestMessage requestMessage, List<Object> models, List<Set<String>> modelsKeys) throws Exception {
 		super.execute(dao, responseMessage, requestMessage, models, modelsKeys);
 		
+		if (requestMessage.getFIELDS() != null) {
+			return;
+		}
 		SuperDAOIMP daoimp = (SuperDAOIMP)dao;
-		WHPurchaseOrder order = (WHPurchaseOrder)models.get(0);
-		String orderNO = order.getOrderNO();
+		WHPurchaseOrder vo = (WHPurchaseOrder)models.get(0);
+		 Map<String, Serializable> keyValues = new HashMap<String, Serializable>();
+		 keyValues.put("id", vo.getId());
+		WHPurchaseOrder po = AppModelsHelper.getPersistenceByUniqueKeyValue(dao, keyValues, vo.getClass());
+		String orderNO = po.getOrderNO();
 		
 		
 		String queryString = "FROM FinancePaymentBill WHERE referenceOrderType=:referenceOrderType AND referenceOrderNO=:referenceOrderNO " ; 
@@ -49,14 +58,13 @@ public class WHPurchaseOrderCommandRead extends WarehouseCommandRead {
 			float unPay = bill.getRealPaid();
 			
 			ain.add(payDate);
+			ain.add(paymentOrderNO);
 			ain.add(shouldPay);
 			ain.add(unPay);
-			ain.add(paymentOrderNO);
 			list.add(ain);
 		}
 
-		list.add(responseMessage.results);
-		responseMessage.results = list;
+		((List<Object>)responseMessage.results).add(list);
 		
 		
 	}
