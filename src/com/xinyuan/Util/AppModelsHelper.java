@@ -26,7 +26,7 @@ import com.xinyuan.model.Warehouse.WHLendOutOrder;
 
 public class AppModelsHelper {
 	
-	public static <E extends Object>  E getPersistenceByUniqueKeyValue(SuperDAO dao, Map<String,   Serializable> keyValues, Class<E> clazz) throws Exception {
+	public static <E extends Object>  E getPersistenceByUniqueKeyValue(SuperDAO dao, Map<String, Object> keyValues, Class<E> clazz) throws Exception {
 		String identityJSON = GsonHelper.getGson().toJson(keyValues);
 		E identityVo = GsonHelper.getGson().fromJson(identityJSON, clazz);
 		E persistence = dao.readUnique(identityVo, keyValues.keySet());

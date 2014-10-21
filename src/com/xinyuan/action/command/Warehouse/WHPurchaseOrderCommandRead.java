@@ -1,6 +1,5 @@
 package com.xinyuan.action.command.Warehouse;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -32,7 +31,7 @@ public class WHPurchaseOrderCommandRead extends WarehouseCommandRead {
 		}
 		SuperDAOIMP daoimp = (SuperDAOIMP)dao;
 		WHPurchaseOrder vo = (WHPurchaseOrder)models.get(0);
-		 Map<String, Serializable> keyValues = new HashMap<String, Serializable>();
+		 Map<String, Object> keyValues = new HashMap<String, Object>();
 		 keyValues.put("id", vo.getId());
 		WHPurchaseOrder po = AppModelsHelper.getPersistenceByUniqueKeyValue(dao, keyValues, vo.getClass());
 		String orderNO = po.getOrderNO();
