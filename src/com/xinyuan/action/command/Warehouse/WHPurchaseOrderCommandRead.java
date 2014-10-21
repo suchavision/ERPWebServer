@@ -54,11 +54,10 @@ public class WHPurchaseOrderCommandRead extends WarehouseCommandRead {
 			ain.add(paymentOrderNO);
 			list.add(ain);
 		}
-		
-		
-		
+
 		list.add(responseMessage.results);
 		responseMessage.results = list;
+		
 		
 	}
 	

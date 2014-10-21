@@ -57,9 +57,9 @@ public class SuperAction extends ActionBase {
 	
 	
 	private String runCommand(String type) throws Exception {
-		String categoryName = IntrospectHelper.getShortClassName(this).replace(ConfigConstants.ACTION_CLASS_SUFFIX, "");
-		String preferredModelName = IntrospectHelper.getShortClassName(models.get(0));
-		Command command = ActionHelper.getCommand(categoryName, preferredModelName, type);
+		String categoryName=IntrospectHelper.getShortClassName(this).replace(ConfigConstants.ACTION_CLASS_SUFFIX, "");
+		String preferredModel=IntrospectHelper.getShortClassName(models.get(0));
+		Command command=ActionHelper.getCommand(categoryName, preferredModel, type);
 		command.execute(dao, responseMessage, requestMessage, models, modelsKeys);
 		return Action.NONE;
 	}
