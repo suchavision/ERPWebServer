@@ -6,6 +6,7 @@ import j2se.modules.Helper.SecurityCode;
 import j2se.modules.Helper.VerifyCode;
 import j2se.modules.Introspector.ObjectIntrospector;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -163,15 +164,15 @@ public class SettingAction extends ActionBase {
 		
 		SuperDAO superDao = new SuperDAOIMP();
 		
-		List<Map<String, String>> identities = requestMessage.getIDENTITYS();
+		List<Map<String, Serializable>> identities = requestMessage.getIDENTITYS();
 		
 		APPSettings appSettingVO = (APPSettings) models.get(0);
 			
 		// get PO
-		Map<String, String> idenfier = identities.get(0);
+		Map<String, Serializable> idenfier = identities.get(0);
 		
 		// when modify administrator's type , check is administrator
-		String typeValue = idenfier.get("type");
+		String typeValue = (String)idenfier.get("type");
 		if (typeValue.startsWith(ConfigConstants.APPSettings_TYPE_PREFIX_ADMIN)) {
 			if (! AdministratorInterceptor.currentUserIsAdministrator()) return Action.NONE;
 		}
@@ -214,12 +215,12 @@ public class SettingAction extends ActionBase {
 		
 		SuperDAO superDao = new SuperDAOIMP();
 		
-		List<Map<String, String>> identities = requestMessage.getIDENTITYS();
+		List<Map<String, Serializable>> identities = requestMessage.getIDENTITYS();
 		
 		APPSettings appSettingVO = (APPSettings) models.get(0);
 			
 		// get PO
-		Map<String, String> idenfier = identities.get(0);
+		Map<String, Serializable> idenfier = identities.get(0);
 		ObjectIntrospector.setProperty(appSettingVO, idenfier);
 		APPSettings appSettingPO =  superDao.readUnique(appSettingVO, idenfier.keySet());
 		

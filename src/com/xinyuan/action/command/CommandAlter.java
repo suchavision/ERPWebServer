@@ -1,5 +1,6 @@
 package com.xinyuan.action.command;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -21,7 +22,7 @@ public abstract class CommandAlter implements Command {
 	public void execute(SuperDAO dao, ResponseMessage responseMessage, RequestMessage requestMessage, List<Object> models, List<Set<String>> modelsKeys) throws Exception {
 		
 		List<String> forwardsList = requestMessage.getAPNS_FORWARDS();
-		List<Map<String, String>> identityList = requestMessage.getIDENTITYS();	
+		List<Map<String, Serializable>> identityList = requestMessage.getIDENTITYS();	
 		List<Map<String, Object>> forwardsContents = requestMessage.getAPNS_CONTENTS();
 		
 		for (int i = 0; i < models.size(); i++) {
