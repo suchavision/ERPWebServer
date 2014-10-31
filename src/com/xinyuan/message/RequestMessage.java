@@ -2,7 +2,6 @@ package com.xinyuan.message;
 
 import j2se.modules.Introspector.IntrospectHelper;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +20,7 @@ public class RequestMessage {
 	private List<Map<String, Map<String,String>>> CRITERIAS;	// ["and": Map<String,String>, "or":Map<String,String>]
 	
 	// modify , delete 
-	private List<Map<String, Serializable>> IDENTITYS;
+	private List<Map<String, Object>> IDENTITYS;
 	
 	// preconditions
 	private List<Map<String, String>> PRECONDITIONS;
@@ -97,10 +96,10 @@ public class RequestMessage {
 	}
 
 
-	public List<Map<String, Serializable>> getIDENTITYS() {
+	public List<Map<String, Object>> getIDENTITYS() {
 		return IDENTITYS;
 	}
-	public void setIDENTITYS(List<Map<String, Serializable>> iDENTITYS) {
+	public void setIDENTITYS(List<Map<String, Object>> iDENTITYS) {
 		IDENTITYS = iDENTITYS;
 	}
 	

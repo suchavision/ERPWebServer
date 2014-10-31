@@ -164,12 +164,12 @@ public class SettingAction extends ActionBase {
 		
 		SuperDAO superDao = new SuperDAOIMP();
 		
-		List<Map<String, Serializable>> identities = requestMessage.getIDENTITYS();
+		List<Map<String, Object>> identities = requestMessage.getIDENTITYS();
 		
 		APPSettings appSettingVO = (APPSettings) models.get(0);
 			
 		// get PO
-		Map<String, Serializable> idenfier = identities.get(0);
+		Map<String, Object> idenfier = identities.get(0);
 		
 		// when modify administrator's type , check is administrator
 		String typeValue = (String)idenfier.get("type");
@@ -215,12 +215,12 @@ public class SettingAction extends ActionBase {
 		
 		SuperDAO superDao = new SuperDAOIMP();
 		
-		List<Map<String, Serializable>> identities = requestMessage.getIDENTITYS();
+		List<Map<String, Object>> identities = requestMessage.getIDENTITYS();
 		
 		APPSettings appSettingVO = (APPSettings) models.get(0);
 			
 		// get PO
-		Map<String, Serializable> idenfier = identities.get(0);
+		Map<String, Object> idenfier = identities.get(0);
 		ObjectIntrospector.setProperty(appSettingVO, idenfier);
 		APPSettings appSettingPO =  superDao.readUnique(appSettingVO, idenfier.keySet());
 		

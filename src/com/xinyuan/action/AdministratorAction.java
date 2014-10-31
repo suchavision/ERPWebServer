@@ -2,7 +2,6 @@ package com.xinyuan.action;
 
 import j2se.modules.Introspector.ObjectIntrospector;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -28,7 +27,7 @@ public class AdministratorAction extends ActionBase {
 		
 		UserDAO userDAO = new UserDAOIMP();
 		
-		List<Map<String, Serializable>> identities = requestMessage.getIDENTITYS();
+		List<Map<String, Object>> identities = requestMessage.getIDENTITYS();
 		for (int i = 0; i < models.size(); i++) {
 			User model = (User)models.get(i);
 			Set<String> keys = modelsKeys.get(i);
