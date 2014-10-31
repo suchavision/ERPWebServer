@@ -308,5 +308,23 @@
 	alter table Contract drop column contact;
 	alter table Contract drop column phoneNO;
 	alter table Contract drop column faxNO;
+	
+	
+	
+	
+	
+	
+-- 2014-10-31
+
+	alter table WHPurchaseBill change num amount FLOAT;
+	
+	alter table WHScrapOrder change scrapAmount amount FLOAT;
+	
+	
+	
+	
+	
+	
+	
     
     

@@ -9,16 +9,14 @@ import com.xinyuan.model.BaseBill;
 @Table
 public class WHPurchaseBill extends BaseBill {
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	
 	private String productCode;         //产品代码
 	private String productName;         //品名
 	private String purchaseQC;          //进货质检单
 
-	private float  num;                 //数量
+	private float  amount ;  			//数量
 	private String unit;                //单位
 	private float  unitPrice;           //单价
 	private float  subTotal;            //小计
@@ -52,11 +50,11 @@ public class WHPurchaseBill extends BaseBill {
 		this.purchaseQC = purchaseQC;
 
 	}
-	public float getNum() {
-		return num;
+	public float getAmount() {
+		return amount;
 	}
-	public void setNum(float num) {
-		this.num = num;
+	public void setAmount(float amount) {
+		this.amount = amount;
 	}
 	public String getUnit() {
 		return unit;
@@ -101,6 +99,4 @@ public class WHPurchaseBill extends BaseBill {
 		this.storageSubTotal = storageSubTotal;
 	}
 
-	
-	
 }

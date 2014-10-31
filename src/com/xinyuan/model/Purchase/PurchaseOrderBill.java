@@ -13,11 +13,11 @@ public class PurchaseOrderBill extends BaseBill {
 
 	private String purchaseOrderNO;
 	
-	private String productNo;//产品代码
-	private String standard;//品名规格
-	private float number;//数量
-	private String institution;//单位
-	private float price;//单价
+	private String productCode;		//产品代码
+	private String productName;		//品名规格
+	private float amount;			//数量
+	private String unit;			//单位
+	private float unitPrice;		//单价
 	
 	
 	public String getPurchaseOrderNO() {
@@ -26,45 +26,35 @@ public class PurchaseOrderBill extends BaseBill {
 	public void setPurchaseOrderNO(String purchaseOrderNO) {
 		this.purchaseOrderNO = purchaseOrderNO;
 	}
-	public String getProductNo() {
-		return productNo;
+	public String getProductCode() {
+		return productCode;
 	}
-	public void setProductNo(String productNo) {
-		this.productNo = productNo;
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
 	}
-	public String getStandard() {
-		return standard;
+	public String getProductName() {
+		return productName;
 	}
-	public void setStandard(String standard) {
-		this.standard = standard;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
-	public float getNumber() {
-		return number;
+	public float getAmount() {
+		return amount;
 	}
-	public void setNumber(float number) {
-		this.number = number;
+	public void setAmount(float amount) {
+		this.amount = amount;
 	}
-	public String getInstitution() {
-		return institution;
+	public String getUnit() {
+		return unit;
 	}
-	public void setInstitution(String institution) {
-		this.institution = institution;
+	public void setUnit(String unit) {
+		this.unit = unit;
 	}
-	public float getPrice() {
-		return price;
+	public float getUnitPrice() {
+		return unitPrice;
 	}
-	public void setPrice(float price) {
-		this.price = price;
+	public void setUnitPrice(float unitPrice) {
+		this.unitPrice = unitPrice;
 	}
-	public float getStatistics() {
-		return statistics;
-	}
-	public void setStatistics(float statistics) {
-		this.statistics = statistics;
-	}
-	private float statistics;//小计
-	
-	
-	
 
 }
