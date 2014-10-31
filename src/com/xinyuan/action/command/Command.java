@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.Set;
 
 import com.xinyuan.dao.SuperDAO;
-
-
 import com.xinyuan.message.RequestMessage;
 import com.xinyuan.message.ResponseMessage;
 
