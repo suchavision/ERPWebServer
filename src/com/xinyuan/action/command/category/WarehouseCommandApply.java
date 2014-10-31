@@ -34,7 +34,7 @@ public class WarehouseCommandApply extends CommandApply {
 			WHScrapOrder order = (WHScrapOrder)persistence;
 			String codeValue = order.getProductCode();
 			if (codeValue == null) return;
-			float amount =  order.getScrapAmount();
+			float amount =  order.getAmount();
 			
 			WHInventory inventoryPO= (WHInventory)daoImp.getObject(WHInventory.class, "productCode", codeValue);
 			float IVTotalAmount =  inventoryPO.getTotalAmount();
