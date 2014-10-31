@@ -320,6 +320,8 @@
 	
 	alter table WHScrapOrder change scrapAmount amount FLOAT;
 	
+	rename table PurchaseOrderBill to PurchaseBill;
+	
 	
 	
 	

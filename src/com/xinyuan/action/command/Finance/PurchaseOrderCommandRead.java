@@ -13,7 +13,7 @@ import com.xinyuan.dao.impl.PurchaseDAOIMP;
 import com.xinyuan.dao.impl.PurchaseOrderDaoImpl;
 import com.xinyuan.message.RequestMessage;
 import com.xinyuan.message.ResponseMessage;
-import com.xinyuan.model.Purchase.PurchaseOrderBill;
+import com.xinyuan.model.Purchase.PurchaseBill;
 
 public class PurchaseOrderCommandRead extends FinanceReceiptOrderCommandRead {
 	@Override

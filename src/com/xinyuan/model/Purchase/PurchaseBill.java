@@ -7,7 +7,7 @@ import com.xinyuan.model.BaseBill;
 
 @Table
 @Entity
-public class PurchaseOrderBill extends BaseBill {
+public class PurchaseBill extends BaseBill {
 	
 	private static final long serialVersionUID = 1L;
 
