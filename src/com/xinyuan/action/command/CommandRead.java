@@ -177,6 +177,7 @@ public class CommandRead implements Command {
 		
 		responseMessage.results = results;
 		responseMessage.status = ConfigConstants.STATUS_POSITIVE;
+		
 	}
 
 }
