@@ -204,6 +204,7 @@
         <!-- Purchase Models -->
         <mapping class="com.xinyuan.model.Purchase.Vendor"/>
         <mapping class="com.xinyuan.model.Purchase.PurchaseOrder"/>
+        <mapping class="com.xinyuan.model.Purchase.PurchaseOrderBill"/>
         
          <!-- QualityControl Models -->
         <mapping class="com.xinyuan.model.QualityControl.QCReworkNoticeOrder"/>
