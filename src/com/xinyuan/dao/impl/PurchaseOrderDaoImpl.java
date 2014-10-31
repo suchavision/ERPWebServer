@@ -3,14 +3,11 @@ package com.xinyuan.dao.impl;
 import java.sql.Connection;
 import java.util.List;
 
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 
 import com.Global.HibernateAbstractDAO;
-import com.xinyuan.dao.FinanceDAO;
 import com.xinyuan.dao.PurchaseOrderDao;
-import com.xinyuan.model.Finance.FinancePaymentBill;
 import com.xinyuan.model.Purchase.PurchaseOrder;
 
 public class PurchaseOrderDaoImpl extends HibernateAbstractDAO  implements PurchaseOrderDao {

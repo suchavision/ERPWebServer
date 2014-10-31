@@ -6,7 +6,6 @@ import j2se.modules.Introspector.ObjectIntrospector;
 
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
