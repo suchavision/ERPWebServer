@@ -87,8 +87,17 @@
 		</action>
 		
 	</package>
-	
-	
+
+	<!-- resource package -->
+	<package name="resource" extends="main" namespace="/resource">
+
+		<action name="upload" class="com.xinyuan.action.ResourceAction" method="upload">
+			<!-- <interceptor-ref name="post-request" />
+			<interceptor-ref name="user-agent" />
+			<interceptor-ref name="authorize-check" /> -->
+		</action>
+
+	</package>
 	
 	
 	<!-- user package -->
