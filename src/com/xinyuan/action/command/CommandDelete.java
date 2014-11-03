@@ -2,6 +2,8 @@ package com.xinyuan.action.command;
 
 import j2se.modules.Introspector.IntrospectHelper;
 
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 import com.xinyuan.Util.ApprovalsDAOHelper;
@@ -19,7 +21,15 @@ public class CommandDelete extends CommandAlter {
 		MessagesKeys.getCurrentResponseMessage().descriptions = MessagesKeys.DEFAULT;
 		
 		// check if delete successfully
-		if (dao.readUnique(persistence, IntrospectHelper.getAllProperties(persistence)) != null) {
+		Set<String> keys = new HashSet<String>();
+		Set<String> properties = IntrospectHelper.getAllProperties(persistence);
+		for (Iterator<String> iterator = properties.iterator(); iterator.hasNext();) {
+			String string = (String) iterator.next();
+			if (!string.contains("Bill")) {
+				keys.add(string);
+			}
+		}
+		if (dao.readUnique(persistence, keys) != null) {
 		    throw new MessagesException(MessagesKeys.DEFAULT);
 		}
 	}
