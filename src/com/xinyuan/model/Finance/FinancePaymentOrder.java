@@ -20,7 +20,7 @@ public class FinancePaymentOrder extends OrderApp4 {
 	private String staffCategory;		 //人员类别
 	private String staffNO;				 //申请人
 	
-	private String payMode; // payWay;				// 付款方式
+	private String payMode;				// 付款方式
 	private String bankAccount;			// 付款帐户
 	
 	private String feeDescription;		// 费用说明

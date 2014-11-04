@@ -16,7 +16,7 @@ public class PurchaseOrderDaoImpl extends HibernateAbstractDAO  implements Purch
 	public List getfinanceiptorder(PurchaseOrder pull) {
 		Connection connection=null;
 		Session session=null;
-		String hql="from PurchaseOder where (OrderNO="+pull.getOrderNO()+" and bookPurhaseNO="+pull.getBookPurhaseNO()+" and bookDate="+pull.getBookDate()+" and vendorNumber="+pull.getVendorNumber()+" oand contact="+pull.getContact()+" and phoneNO="+pull.getPhoneNO()+" and payCondition="+pull.getPayCondition()+" and payWay="+pull.getPayWay()+" and freight="+pull.getFreight()+" and deliveryDate="+pull.getDeliveryDate()+" and deliveryPlace="+pull.getDeliveryPlace()+")";
+		String hql="from PurchaseOder where (OrderNO="+pull.getOrderNO()+" and bookPurhaseNO="+pull.getBookPurhaseNO()+" and bookDate="+pull.getBookDate()+" and vendorNumber="+pull.getVendorNumber()+" oand contact="+pull.getContact()+" and phoneNO="+pull.getPhoneNO()+" and payCondition="+pull.getPayCondition()+" and payMode="+pull.getPayMode()+" and freight="+pull.getFreight()+" and deliveryDate="+pull.getDeliveryDate()+" and deliveryPlace="+pull.getDeliveryPlace()+")";
 		Query query=this.createQuery(hql);
 		return query.list();
 	}

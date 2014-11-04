@@ -24,7 +24,7 @@ public class PurchaseOrder extends OrderApp4 {
 
 	
 	private String payCondition;		// 付款条件
-	private String payMode; //  payWay;				// 付款方式
+	private String payMode;				// 付款方式
 	private float freight;				// 运费
 	
 	private Date deliveryDate;			// 交货日期
