@@ -7,7 +7,7 @@ import com.xinyuan.model.OrderApp4;
 
 /**
  * 
- * 零用金申请单
+ * 支付单
  * 
  */
 
@@ -20,7 +20,7 @@ public class FinancePaymentOrder extends OrderApp4 {
 	private String staffCategory;		 //人员类别
 	private String staffNO;				 //申请人
 	
-	private String payWay;				// 付款方式
+	private String payMode; // payWay;				// 付款方式
 	private String bankAccount;			// 付款帐户
 	
 	private String feeDescription;		// 费用说明
@@ -44,12 +44,14 @@ public class FinancePaymentOrder extends OrderApp4 {
 		this.staffNO = staffNO;
 	}
 
-	public String getPayWay() {
-		return payWay;
+	
+
+	public String getPayMode() {
+		return payMode;
 	}
 
-	public void setPayWay(String payWay) {
-		this.payWay = payWay;
+	public void setPayMode(String payMode) {
+		this.payMode = payMode;
 	}
 
 	public String getBankAccount() {

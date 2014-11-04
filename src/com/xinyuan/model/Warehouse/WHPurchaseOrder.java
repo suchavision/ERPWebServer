@@ -23,17 +23,16 @@ import com.xinyuan.model.OrderApp4;
 @Table
 public class WHPurchaseOrder extends OrderApp4 {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
-	private String buyNO;           //采购单号
-	private Date purchaseDate;      //进货日期
+	private String purchaseOrderNO;			//采购单号
+	private Date purchaseDate;     			 //进货日期
 	
-	private String company;         //厂   商
-	private String contactPeople;   //联 系 人
-	private String companyTel;      //厂商电话
+	private String vendorName; 			 //厂商名字
+	private String vendorNumber;		// 厂商编号
+	
+	private String contact ;		//联 系 人
+	private String phoneNO ;  		//厂商电话
 	
 	private String payCondition;    //付款条件
 	private String payMode;         //付款方式
@@ -43,14 +42,15 @@ public class WHPurchaseOrder extends OrderApp4 {
 	private float shouldPay;		//应	  付
 	private float totalPay;         //共   付
 	private float storageTotal;     //入库总计
-	
+	                             
 	private Set<WHPurchaseBill> WHPurchaseBills;    //进货的Bill
 	
-	public String getBuyNO() {
-		return buyNO;
+	
+	public String getPurchaseOrderNO() {
+		return purchaseOrderNO;
 	}
-	public void setBuyNO(String buyNO) {
-		this.buyNO = buyNO;
+	public void setPurchaseOrderNO(String purchaseOrderNO) {
+		this.purchaseOrderNO = purchaseOrderNO;
 	}
 	public Date getPurchaseDate() {
 		return purchaseDate;
@@ -58,23 +58,29 @@ public class WHPurchaseOrder extends OrderApp4 {
 	public void setPurchaseDate(Date purchaseDate) {
 		this.purchaseDate = purchaseDate;
 	}
-	public String getCompany() {
-		return company;
+	public String getVendorName() {
+		return vendorName;
 	}
-	public void setCompany(String company) {
-		this.company = company;
+	public void setVendorName(String vendorName) {
+		this.vendorName = vendorName;
 	}
-	public String getContactPeople() {
-		return contactPeople;
+	public String getVendorNumber() {
+		return vendorNumber;
 	}
-	public void setContactPeople(String contactPeople) {
-		this.contactPeople = contactPeople;
+	public void setVendorNumber(String vendorNumber) {
+		this.vendorNumber = vendorNumber;
 	}
-	public String getCompanyTel() {
-		return companyTel;
+	public String getContact() {
+		return contact;
 	}
-	public void setCompanyTel(String companyTel) {
-		this.companyTel = companyTel;
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+	public String getPhoneNO() {
+		return phoneNO;
+	}
+	public void setPhoneNO(String phoneNO) {
+		this.phoneNO = phoneNO;
 	}
 	public String getPayCondition() {
 		return payCondition;
@@ -94,7 +100,6 @@ public class WHPurchaseOrder extends OrderApp4 {
 	public void setFreight(float freight) {
 		this.freight = freight;
 	}
-	
 	public float getDeliveryTotal() {
 		return deliveryTotal;
 	}
@@ -119,6 +124,7 @@ public class WHPurchaseOrder extends OrderApp4 {
 	public void setStorageTotal(float storageTotal) {
 		this.storageTotal = storageTotal;
 	}
+	
 	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 	@JoinColumn(name="WHPurchaseOrder_id")							
 	public Set<WHPurchaseBill> getWHPurchaseBills() {

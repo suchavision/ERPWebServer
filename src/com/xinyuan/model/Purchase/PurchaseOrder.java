@@ -18,12 +18,13 @@ public class PurchaseOrder extends OrderApp4 {
 	
 	
 	private String vendorNumber;		// 厂商编号
+	private String vendorName;			// 厂商名字
 	private String contact;				// 联系人
 	private String phoneNO;				// 电话
 
 	
 	private String payCondition;		// 付款条件
-	private String payWay;				// 付款方式
+	private String payMode; //  payWay;				// 付款方式
 	private float freight;				// 运费
 	
 	private Date deliveryDate;			// 交货日期
@@ -51,6 +52,12 @@ public class PurchaseOrder extends OrderApp4 {
 	public void setVendorNumber(String vendorNumber) {
 		this.vendorNumber = vendorNumber;
 	}
+	public String getVendorName() {
+		return vendorName;
+	}
+	public void setVendorName(String vendorName) {
+		this.vendorName = vendorName;
+	}
 	public String getContact() {
 		return contact;
 	}
@@ -69,11 +76,12 @@ public class PurchaseOrder extends OrderApp4 {
 	public void setPayCondition(String payCondition) {
 		this.payCondition = payCondition;
 	}
-	public String getPayWay() {
-		return payWay;
+	
+	public String getPayMode() {
+		return payMode;
 	}
-	public void setPayWay(String payWay) {
-		this.payWay = payWay;
+	public void setPayMode(String payMode) {
+		this.payMode = payMode;
 	}
 	public float getFreight() {
 		return freight;
