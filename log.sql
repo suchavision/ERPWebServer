@@ -323,9 +323,19 @@
 	rename table PurchaseOrderBill to PurchaseBill;
 	
 	
+-- 2014-11-04
 	
+	alter table WHPurchaseOrder change buyNO purchaseOrderNO varchar(255);
 	
+	alter table WHPurchaseOrder change company vendorName varchar(255);
 	
+	alter table WHPurchaseOrder change contactPeople contact varchar(255);
+	
+	alter table WHPurchaseOrder change companyTel phoneNO varchar(255);
+	
+	alter table PurchaseOrder change payWay payMode varchar(255);
+	
+	alter table FinancePaymentOrder change payWay payMode varchar(255);
 	
 	
     
