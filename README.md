@@ -93,7 +93,9 @@ Take a look :
     http://stackoverflow.com/questions/9601294/svn-commit-file-named-2x-png
 
 
+Relocate URL:
 
+	svn sw --relocate svn://old_ip/Directory svn://new_ip/Directory
 
 
 
