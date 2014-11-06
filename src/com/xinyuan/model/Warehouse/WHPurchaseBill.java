@@ -19,12 +19,12 @@ public class WHPurchaseBill extends BaseBill {
 	private float  amount ;  			//数量
 	private String unit;                //单位
 	private float  unitPrice;           //单价
-	private float  subTotal;            //小计
+//	private float  subTotal;            //小计
 	
 	private float  storageNum;          //入库数量
 	private String storageUnit;         //入库单位
 	private float  storageUnitPrice;    //入库单价
-	private float  storageSubTotal;     //入库小计
+//	private float  storageSubTotal;     //入库小计
 	
 	
 	
@@ -68,12 +68,6 @@ public class WHPurchaseBill extends BaseBill {
 	public void setUnitPrice(float unitPrice) {
 		this.unitPrice = unitPrice;
 	}
-	public float getSubTotal() {
-		return subTotal;
-	}
-	public void setSubTotal(float subTotal) {
-		this.subTotal = subTotal;
-	}
 	public float getStorageNum() {
 		return storageNum;
 	}
@@ -91,12 +85,6 @@ public class WHPurchaseBill extends BaseBill {
 	}
 	public void setStorageUnitPrice(float storageUnitPrice) {
 		this.storageUnitPrice = storageUnitPrice;
-	}
-	public float getStorageSubTotal() {
-		return storageSubTotal;
-	}
-	public void setStorageSubTotal(float storageSubTotal) {
-		this.storageSubTotal = storageSubTotal;
 	}
 
 }

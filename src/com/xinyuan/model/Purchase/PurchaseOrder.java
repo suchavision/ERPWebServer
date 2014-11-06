@@ -2,6 +2,7 @@ package com.xinyuan.model.Purchase;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -30,7 +31,7 @@ public class PurchaseOrder extends OrderApp4 {
 	private Date deliveryDate;			// 交货日期
 	private String deliveryPlace;		// 交货地址
 	
-	
+	private String purpose;				// 用途
 	
 	
 	
@@ -101,5 +102,13 @@ public class PurchaseOrder extends OrderApp4 {
 	public void setDeliveryPlace(String deliveryPlace) {
 		this.deliveryPlace = deliveryPlace;
 	}
+	@Column(columnDefinition="TEXT")
+	public String getPurpose() {
+		return purpose;
+	}
+	public void setPurpose(String purpose) {
+		this.purpose = purpose;
+	}
+	
 	
 }

@@ -12,9 +12,6 @@ import com.xinyuan.model.OrderApp2;
 @Table
 public class WHPickingOrder extends OrderApp2 {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private Date pickingDate;           //领出日期
@@ -23,7 +20,7 @@ public class WHPickingOrder extends OrderApp2 {
 	private String productCategory;     //产品分类
 	private String productCode;         //产品代码
 	private String productName;         //品   名
-	private String application;         //用   途
+	private String purpose;             //用   途
 	private String applicationDesc;     //用途描述
 	
 	private float pickingAmount;        //领出数量
@@ -105,11 +102,12 @@ public class WHPickingOrder extends OrderApp2 {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-	public String getApplication() {
-		return application;
+	@Column(columnDefinition="TEXT")
+	public String getPurpose() {
+		return purpose;
 	}
-	public void setApplication(String application) {
-		this.application = application;
+	public void setPurpose(String purpose) {
+		this.purpose = purpose;
 	}
 	public String getApplicationDesc() {
 		return applicationDesc;

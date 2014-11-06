@@ -337,6 +337,12 @@
 	
 	alter table FinancePaymentOrder change payWay payMode varchar(255);
 	
+	alter table WHPickingOrder change application purpose TEXT;
+	
+	alter table WHPurchaseBill drop column subTotal;
+	
+	alter table WHPurchaseBill drop column storageSubTotal;
+	
 	
     
     
