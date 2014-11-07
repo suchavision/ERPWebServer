@@ -46,7 +46,7 @@ public class WarehouseCommandApply extends CommandApply {
 		
 		if (persistence instanceof WHPickingOrder) {
 			WHPickingOrder order = (WHPickingOrder)persistence;
-			String codeValue = order.getProductCode();
+			String codeValue = order.getProductCode(); 
 			if (codeValue == null) return;
 			
 			float pickingAmount =  order.getPickingAmount();
@@ -169,7 +169,7 @@ public class WarehouseCommandApply extends CommandApply {
 				
 				if (pd.getReadMethod() != null && !IntrospectHelper.isClassPropertyName(pd.getName())) {
 					
-					String propertyNameNew = pd.getName() ;
+					String propertyNameNew = pd.getName();
 					if (propertyNameNew.indexOf("_N") >=0 ) 
 					{
 						

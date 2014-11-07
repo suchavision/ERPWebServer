@@ -14,7 +14,7 @@ public class FinanceAccount extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	private String number ;				// 帐户编号
+	private String number;				// 帐户编号
 	private String name; 				// 户名
 	private String bank ; 				// 银行
 	private String branch;				// 分支行

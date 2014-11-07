@@ -24,8 +24,8 @@ public class EmployeeATTFixOrder extends OrderApp3 {
 	private String employeeNO ; // 员工编号
 	
 	// 补签日期的范围
-	private Date attendanceStarDate; 
-	private Date attendanceEndDate;
+	private Date attendanceStarDate;   
+	private Date attendanceEndDate; 
 	
 	
 	private Date repairDate ; // 补签日期时间

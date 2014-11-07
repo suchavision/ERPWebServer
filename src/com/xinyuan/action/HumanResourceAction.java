@@ -50,7 +50,7 @@ public class HumanResourceAction extends SuperAction {
 						
 						while (tableResult.next()) {
 							String tableName = tableResult.getString("ATableName");
-							
+											
 							int dayCount = 2 ; //default
 							HumanResourceDAOIMP daoimp = (HumanResourceDAOIMP)getDao();
 							APPSettings appSettings = (APPSettings)daoimp.getObject(APPSettings.class, "type", "ADMIN_APNS_TraceFilesDate");
@@ -82,7 +82,6 @@ public class HumanResourceAction extends SuperAction {
 								
 								outterResults.add(orderNO);
 							}
-							
 							orderResults.put(tableName, outterResults);
 							
 						}
@@ -101,7 +100,20 @@ public class HumanResourceAction extends SuperAction {
 		return Action.NONE;
 	}
 	
-	
+	public String Attendance() 
+	{
+//		final Map<String, List<Object>> Results = new HashMap<String, List<Object>>();
+//		List<Object> list=new ArrayList<Object>();
+//		AttendanceRecord rec=new AttendanceRecord();
+//		
+//	    String hql="from AttendanceRecord ";
+//	    if()
+//	    {
+//	    	
+//	    }
+//	    Query query = (Query) HibernateInitializer.getSessionFactory().getCurrentSession().createQuery(hql);
+		return Action.NONE;
+	}
 	
 }
 

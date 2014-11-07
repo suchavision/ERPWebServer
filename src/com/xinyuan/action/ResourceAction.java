@@ -20,18 +20,23 @@ public class ResourceAction extends ActionSupport {
 	public String upload() throws Exception {
 		
 		HttpServletRequest request = ServletActionContext.getRequest();
+		String boundary = request.getHeader("boundary");
+		
 
 		try {
 			
 			ServletInputStream stream = request.getInputStream();
 
-			File file = new File("/Users/isaacs/Desktop/camera.png");
+			File file = new File("/Users/zhukun/Desktop/camera.txt");
 			OutputStream os = null;
 			try {
 				os = new FileOutputStream(file);
 				byte buffer[] = new byte[4 * 1024];
+				
+				int count = 0;
+				
 				while ((stream.read(buffer)) != -1) {
-					os.write(buffer);
+					String s=boundary.substring(0,6);	
 				}
 				os.flush();
 			} catch (Exception e) {
