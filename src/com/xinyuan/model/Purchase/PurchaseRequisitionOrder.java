@@ -2,6 +2,7 @@ package com.xinyuan.model.Purchase;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -12,7 +13,7 @@ public class PurchaseRequisitionOrder extends OrderApp4 {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private Date bookDate;				// 订购日期
+	private Date requisitionDate;				// 日期
 	
 	private String vendorName; 			//承办厂商名字
 	private String vendorNumber;		// 承办厂商编号
@@ -26,13 +27,16 @@ public class PurchaseRequisitionOrder extends OrderApp4 {
 	private String vendorName3; 			//承办厂商名字
 	private String vendorNumber3;		// 承办厂商编号
 
+	
+	private String purpose;				// 用途
+	
 
-	public Date getBookDate() {
-		return bookDate;
+	public Date getRequisitionDate() {
+		return requisitionDate;
 	}
 
-	public void setBookDate(Date bookDate) {
-		this.bookDate = bookDate;
+	public void setRequisitionDate(Date requisitionDate) {
+		this.requisitionDate = requisitionDate;
 	}
 
 	public String getVendorName() {
@@ -97,6 +101,14 @@ public class PurchaseRequisitionOrder extends OrderApp4 {
 
 	public void setVendorNumber3(String vendorNumber3) {
 		this.vendorNumber3 = vendorNumber3;
+	}
+	
+	@Column(columnDefinition="TEXT")
+	public String getPurpose() {
+		return purpose;
+	}
+	public void setPurpose(String purpose) {
+		this.purpose = purpose;
 	}
 	
 }

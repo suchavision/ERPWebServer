@@ -10,6 +10,8 @@ public class PurchaseRequisitionBill extends BaseBill {
 	
 	private static final long serialVersionUID = 1L;
 	
+	private String purchaseRequisitionOrderNO; // 对应的请购单号 	
+	
 	private String productCode;		//产品编号
 	private String productName;		//品名规格
 	private float amount;			//数量
@@ -18,6 +20,13 @@ public class PurchaseRequisitionBill extends BaseBill {
 	private float unitPrice2;    //单价2
 	private float unitPrice3;    //单价3
 	
+	
+	public String getPurchaseRequisitionOrderNO() {
+		return purchaseRequisitionOrderNO;
+	}
+	public void setPurchaseRequisitionOrderNO(String purchaseRequisitionOrderNO) {
+		this.purchaseRequisitionOrderNO = purchaseRequisitionOrderNO;
+	}
 	public String getProductCode() {
 		return productCode;
 	}

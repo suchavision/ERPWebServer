@@ -19,12 +19,10 @@ public class WHPurchaseBill extends BaseBill {
 	private float  amount ;  			//数量
 	private String unit;                //单位
 	private float  unitPrice;           //单价
-//	private float  subTotal;            //小计
 	
 	private float  storageNum;          //入库数量
 	private String storageUnit;         //入库单位
 	private float  storageUnitPrice;    //入库单价
-//	private float  storageSubTotal;     //入库小计
 	
 	
 	
