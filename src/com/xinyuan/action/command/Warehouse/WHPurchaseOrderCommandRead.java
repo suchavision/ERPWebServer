@@ -51,7 +51,9 @@ public class WHPurchaseOrderCommandRead extends WarehouseCommandRead {
 			String paymentOrderNO = bill.getPaymentOrderNO();
 			List<Object> ain=new ArrayList<Object>();
 			FinancePaymentOrder financePaymentOrder = (FinancePaymentOrder)daoimp.getObject(FinancePaymentOrder.class, "orderNO", paymentOrderNO);
-			
+			if (financePaymentOrder == null) {
+				continue;
+			}
 			Date payDate = financePaymentOrder.getCreateDate();
 			float shouldPay = bill.getShouldPay();
 			float unPay = bill.getRealPaid();
