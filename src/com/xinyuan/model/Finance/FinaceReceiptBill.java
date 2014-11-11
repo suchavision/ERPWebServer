@@ -11,16 +11,14 @@ public class FinaceReceiptBill extends BaseBill {
 
 	private static final long serialVersionUID = 1L;
 	
-	
 	private String receiptOrderNO ;			// 收款单号
-	
 	
 	private String referenceOrderType;		// 引用单类型: 进货单/派车单
 	private String referenceOrderNO;		// 单号
 	private String productName;				// 品名
 	
-	private float shouldPay;				// 应付金额 
-	private float realPaid;					// 实付金额
+	private float shouldReceive;				// 应收金额 
+	private float realReceive;					// 实收金额
 	
 	
 	public String getReceiptOrderNO() {
@@ -47,16 +45,16 @@ public class FinaceReceiptBill extends BaseBill {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public float getShouldPay() {
-		return shouldPay;
+	public float getShouldReceive() {
+		return shouldReceive;
 	}
-	public void setShouldPay(float shouldPay) {
-		this.shouldPay = shouldPay;
+	public void setShouldReceive(float shouldReceive) {
+		this.shouldReceive = shouldReceive;
 	}
-	public float getRealPaid() {
-		return realPaid;
+	public float getRealReceive() {
+		return realReceive;
 	}
-	public void setRealPaid(float realPaid) {
-		this.realPaid = realPaid;
+	public void setRealReceive(float realReceive) {
+		this.realReceive = realReceive;
 	}
 }
