@@ -200,6 +200,10 @@
         <mapping class="com.xinyuan.model.Finance.FinancePaymentBill"/>
         <mapping class="com.xinyuan.model.Finance.FinancePaymentOrder"/>
         
+        <mapping class="com.xinyuan.model.Finance.FinaceReceiptBill"/>
+        <mapping class="com.xinyuan.model.Finance.FinaceReceiptOrder"/>
+        
+        
         
         <!-- Purchase Models -->
         <mapping class="com.xinyuan.model.Purchase.Vendor"/>
