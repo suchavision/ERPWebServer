@@ -10,7 +10,7 @@ import com.xinyuan.model.OrderApp4;
 
 @Table
 @Entity
-public class FinaceReceiptOrder extends OrderApp4 {
+public class FinanceReceiptOrder extends OrderApp4 {
 
 	private static final long serialVersionUID = 1L;
 	

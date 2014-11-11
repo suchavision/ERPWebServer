@@ -200,8 +200,8 @@
         <mapping class="com.xinyuan.model.Finance.FinancePaymentBill"/>
         <mapping class="com.xinyuan.model.Finance.FinancePaymentOrder"/>
         
-        <mapping class="com.xinyuan.model.Finance.FinaceReceiptBill"/>
-        <mapping class="com.xinyuan.model.Finance.FinaceReceiptOrder"/>
+        <mapping class="com.xinyuan.model.Finance.FinanceReceiptBill"/>
+        <mapping class="com.xinyuan.model.Finance.FinanceReceiptOrder"/>
         
         
         
