@@ -18,13 +18,25 @@ import com.opensymphony.xwork2.Action;
 import com.xinyuan.Util.GsonHelper;
 import com.xinyuan.Util.ParametersHelper;
 import com.xinyuan.dao.SuperDAO;
+import com.xinyuan.dao.impl.AttendanceRecordDAOIMP;
 import com.xinyuan.dao.impl.HumanResourceDAOIMP;
 import com.xinyuan.dao.impl.SuperDAOIMP;
 import com.xinyuan.message.ConfigConstants;
 import com.xinyuan.model.Approval.Approvals;
+import com.xinyuan.model.HumanResource.EmployeeAttendanceRecord;
 import com.xinyuan.model.Setting.APPSettings;
 
 public class HumanResourceAction extends SuperAction {
+	private List<EmployeeAttendanceRecord> emplist;
+	
+	public List<EmployeeAttendanceRecord> getEmplist() {
+		return emplist;
+	}
+
+	public void setEmplist(List<EmployeeAttendanceRecord> emplist) {
+		this.emplist = emplist;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -102,16 +114,14 @@ public class HumanResourceAction extends SuperAction {
 	
 	public String Attendance() 
 	{
-//		final Map<String, List<Object>> Results = new HashMap<String, List<Object>>();
-//		List<Object> list=new ArrayList<Object>();
-//		AttendanceRecord rec=new AttendanceRecord();
-//		
-//	    String hql="from AttendanceRecord ";
-//	    if()
-//	    {
-//	    	
-//	    }
-//	    Query query = (Query) HibernateInitializer.getSessionFactory().getCurrentSession().createQuery(hql);
+		EmployeeAttendanceRecord att=new EmployeeAttendanceRecord();
+		AttendanceRecordDAOIMP atm=new AttendanceRecordDAOIMP();
+		if(requestMessage!=null)
+		{
+		   emplist=atm.FindAttendanceRecord();
+		   responseMessage.results=emplist;
+		   
+		}
 		return Action.NONE;
 	}
 	
