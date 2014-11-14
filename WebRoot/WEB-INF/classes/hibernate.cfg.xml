@@ -113,6 +113,7 @@
         
         <!-- Approval Models -->
         <mapping class="com.xinyuan.model.Approval.Approvals"/>
+        <mapping class="com.xinyuan.model.Approval.ApprovalsReturnedRecord"/>
         
         
 		

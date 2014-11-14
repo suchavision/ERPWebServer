@@ -15,7 +15,7 @@ public class BaseModel implements Serializable {
 	protected int id ;
 	protected Date createDate; 		// the date of creating this model
 	protected String createUser;	// the username of creating this model
-	protected String modifiedUser;	// the username last modified the order
+//	protected String modifiedUser;	// the username last modified the order
 
 	@Id
 	@GeneratedValue
@@ -43,11 +43,11 @@ public class BaseModel implements Serializable {
 		this.createUser = createUser;
 	}
 	
-	public String getModifiedUser() {
-		return modifiedUser;
-	}
-	public void setModifiedUser(String modifiedUser) {
-		this.modifiedUser = modifiedUser;
-	}
+//	public String getModifiedUser() {
+//		return modifiedUser;
+//	}
+//	public void setModifiedUser(String modifiedUser) {
+//		this.modifiedUser = modifiedUser;
+//	}
 	
 }
