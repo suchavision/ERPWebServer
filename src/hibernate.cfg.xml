@@ -139,6 +139,7 @@
         <mapping class="com.xinyuan.model.HumanResource.EmployeeSMOrder"/>
         <mapping class="com.xinyuan.model.HumanResource.EmployeeSMBill"/>
         
+        <mapping class="com.xinyuan.model.HumanResource.EmployeeAttendanceRecord"/>
 
         <!-- Security Models -->
         <mapping class="com.xinyuan.model.Security.SecurityVisitLogOrder"/>
