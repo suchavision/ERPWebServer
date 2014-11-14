@@ -31,6 +31,9 @@ public class HibernateInitializer
     }
     
     public static SessionFactory getSessionFactory() {
+    	if (sessionFactory == null) {
+    		initialize();
+		}
 		return sessionFactory;
 	}
     
