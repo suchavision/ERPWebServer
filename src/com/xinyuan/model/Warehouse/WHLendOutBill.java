@@ -11,12 +11,9 @@ import com.xinyuan.model.BillApp2;
 @Table
 public class WHLendOutBill extends BillApp2 {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
-	private String billNO;     //Bill单号
+	private String referenceOrderNO; // JCD 单号
 	
 	private float returnAmount; //还入数量
 	private Date returnDate; //还入日期
@@ -26,13 +23,12 @@ public class WHLendOutBill extends BillApp2 {
 	
 	
 	
-	public String getBillNO() {
-		return billNO;
+	public String getReferenceOrderNO() {
+		return referenceOrderNO;
 	}
-	public void setBillNO(String billNO) {
-		this.billNO = billNO;
+	public void setReferenceOrderNO(String referenceOrderNO) {
+		this.referenceOrderNO = referenceOrderNO;
 	}
-	
 	public float getReturnAmount() {
 		return returnAmount;
 	}

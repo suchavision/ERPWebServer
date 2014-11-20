@@ -117,7 +117,7 @@ public class WarehouseCommandApply extends CommandApply {
 			
 			String department = IntrospectHelper.getParentPackageName(bill);
 			String orderType = "WHLendOutOrder";
-			String orderNO = bill.getBillNO();
+			String orderNO = bill.getReferenceOrderNO();
 			ApprovalsDAOHelper.addPendingApprove(bill.getForwardUser(),department , orderType, orderNO);
 			
 			dao.modify(inventoryPO);

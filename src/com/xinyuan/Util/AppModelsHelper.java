@@ -34,7 +34,7 @@ public class AppModelsHelper {
 	
 	
 	public static WHLendOutOrder getOrderByBill(SuperDAOIMP dao,WHLendOutBill bill) throws Exception{
-		WHLendOutOrder order = (WHLendOutOrder )dao.getObject(WHLendOutOrder.class, "billNO", bill.getBillNO());
+		WHLendOutOrder order = (WHLendOutOrder )dao.getObject(WHLendOutOrder.class, "referenceOrderNO", bill.getReferenceOrderNO());
 		return order;
 	}
 	
