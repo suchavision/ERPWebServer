@@ -34,10 +34,7 @@ public class FinancePaymentOrderCommandApply extends FinanceCommandApply {
 				
 				financeDAOIMP.modify(obj);
 			}
-		}
-		
-		
-		
+		}	
 	}
 
 	
