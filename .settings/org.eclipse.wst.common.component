@@ -3,9 +3,15 @@
         <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
+        <dependent-module archiveName="J2EE_Modules.war" deploy-path="/WEB-INF/lib" handle="module:/resource/J2EE_Modules/J2EE_Modules">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+<<<<<<< HEAD
+=======
         <dependent-module archiveName="J2SE_Modules.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/J2SE_Modules/J2SE_Modules">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+>>>>>>> working
         <property name="context-root" value="/ERPWebServer"/>
         <property name="java-output-path" value="/ERPWebServer/WebRoot/WEB-INF/classes"/>
         <property name="me-merge-utility-modules" value="true"/>
