@@ -19,6 +19,10 @@ public class PurchaseRequisitionOrderCommandApply extends PurchaseCommandApply {
 		
 		
 		Serializable id = ParametersHelper.getParameter(requestMessage, "shouldDeleteBillId");
+		if (id == null) return;
+		if (id instanceof String) {
+			id = Integer.parseInt(((String)id));
+		}
 		SuperDAOIMP superDAOIMP = (SuperDAOIMP)dao;
 		Object persitence = superDAOIMP.getObject(PurchaseRequisitionBill.class, id);
 		superDAOIMP.delete(persitence);
