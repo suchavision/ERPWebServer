@@ -344,5 +344,12 @@
 	alter table WHPurchaseBill drop column storageSubTotal;
 	
 	
-    
+   
+-- 2014-11-20
+
+	alter table WHLendOutBill change billNO referenceOrderNO varchar(255);
+   
+   
+   
+   
     

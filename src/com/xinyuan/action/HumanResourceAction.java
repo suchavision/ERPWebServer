@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 import org.hibernate.Transaction;
 import org.hibernate.jdbc.Work;
 
@@ -33,6 +34,9 @@ import com.xinyuan.model.HumanResource.EmployeeAttendanceRecord;
 import com.xinyuan.model.Setting.APPSettings;
 
 public class HumanResourceAction extends SuperAction {
+	
+	Transaction transaction = HibernateInitializer.getSessionFactory().getCurrentSession().beginTransaction();
+	
 	private static final long serialVersionUID = 1L;
 	
 	
@@ -124,12 +128,12 @@ public class HumanResourceAction extends SuperAction {
 	
 	public String attendance() throws Exception {
 		
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		Date fromDate = simpleDateFormat.parse("2014-11-12 14:50:00");
-		Date toDate = new Date();
-		
-		List<String> recordList = this.getRecordList(fromDate, toDate, "192.168.0.2", "9922");
-		this.saveRecordListToDataBase(recordList);
+//		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//		Date fromDate = simpleDateFormat.parse("2014-11-12 14:50:00");
+//		Date toDate = new Date();
+//		
+//		List<String> recordList = this.getRecordList(fromDate, toDate, "192.168.0.2", "9922");
+//		this.saveRecordListToDataBase(recordList);
 		
 		
 //		EmployeeAttendanceRecord att = new EmployeeAttendanceRecord();
@@ -152,14 +156,14 @@ public class HumanResourceAction extends SuperAction {
 	 * @throws Exception
 	 */
 	public List<String> getRecordList(Date fromDate, Date toDate, String ip, String port) throws Exception {
-		List<String> recordList = new LinkedList<>();
+		List<String> recordList = new LinkedList<String>();
 
 		String timeFormat = "yyyy-MM-dd HH:mm:ss";
 
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(timeFormat);
 
-		try (FaceId tcpClient = new FaceId(ip, Integer.parseInt(port))) {
-
+		try {
+			FaceId tcpClient = new FaceId(ip, Integer.parseInt(port));
 			String fromTimeString = simpleDateFormat.format(fromDate);
 			String toTimeString = simpleDateFormat.format(toDate);
 
@@ -188,6 +192,21 @@ public class HumanResourceAction extends SuperAction {
 		
 		return recordList;
 	}
+	public String saveEmployeeAttendanceRecord(int identification,Date time,String name)
+	{
+		List<Object> getfmtList = new ArrayList<Object>();
+	    EmployeeAttendanceRecord recor = new EmployeeAttendanceRecord();
+		recor.setId(identification);
+		recor.setName(name);
+		recor.setTime(time);
+		getfmtList.add(recor);
+		if(getfmtList.size()>0)
+		{
+			 System.out.println(getfmtList); 
+		}
+		responseMessage.results = getfmtList;
+		return Action.NONE;
+	}
 	
 	
 	public void saveRecordListToDataBase(List<String> recordList) throws Exception {
@@ -195,8 +214,6 @@ public class HumanResourceAction extends SuperAction {
 		Pattern timePattern = Pattern.compile("[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}");
 		Pattern namePattern = Pattern.compile("name=\"(\\S*)\"");
 		Pattern idPattern = Pattern.compile("id=\"(\\d+)\"");
-		
-		Transaction transaction = HibernateInitializer.getSessionFactory().getCurrentSession().beginTransaction();
 		
 		for (int i = 0; i < recordList.size(); i++) {
 			String recordString = recordList.get(i);
