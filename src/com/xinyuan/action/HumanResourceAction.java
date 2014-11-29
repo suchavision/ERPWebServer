@@ -14,8 +14,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-import org.hibernate.Transaction;
 import org.hibernate.jdbc.Work;
 
 import com.Global.HibernateInitializer;
@@ -35,23 +33,7 @@ import com.xinyuan.model.Setting.APPSettings;
 
 public class HumanResourceAction extends SuperAction {
 	
-	Transaction transaction = HibernateInitializer.getSessionFactory().getCurrentSession().beginTransaction();
-	
 	private static final long serialVersionUID = 1L;
-	
-	
-	private List<EmployeeAttendanceRecord> emplist;
-	
-	
-
-	public List<EmployeeAttendanceRecord> getEmplist() {
-		return emplist;
-	}
-
-	public void setEmplist(List<EmployeeAttendanceRecord> emplist) {
-		this.emplist = emplist;
-	}
-
 
 	@Override
 	protected SuperDAO getDao() {
@@ -126,26 +108,7 @@ public class HumanResourceAction extends SuperAction {
 		return Action.NONE;
 	}
 	
-	public String attendance() throws Exception {
-		
-//		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//		Date fromDate = simpleDateFormat.parse("2014-11-12 14:50:00");
-//		Date toDate = new Date();
-//		
-//		List<String> recordList = this.getRecordList(fromDate, toDate, "192.168.0.2", "9922");
-//		this.saveRecordListToDataBase(recordList);
-		
-		
-//		EmployeeAttendanceRecord att = new EmployeeAttendanceRecord();
-//		AttendanceRecordDAOIMP atm = new AttendanceRecordDAOIMP();
-//		atm.setSessionFactory(HibernateInitializer.getSessionFactory());
-//		if(requestMessage != null) {
-//		   emplist = atm.FindAttendanceRecord();
-//		   responseMessage.results=emplist;
-//		}
-		return Action.NONE;
-		
-	}
+	
 	
 	
 	/**
@@ -155,7 +118,7 @@ public class HumanResourceAction extends SuperAction {
 	 * @param port			9922
 	 * @throws Exception
 	 */
-	public List<String> getRecordList(Date fromDate, Date toDate, String ip, String port) throws Exception {
+	private List<String> getRecordList(Date fromDate, Date toDate, String ip, String port) throws Exception {
 		List<String> recordList = new LinkedList<String>();
 
 		String timeFormat = "yyyy-MM-dd HH:mm:ss";
@@ -192,8 +155,7 @@ public class HumanResourceAction extends SuperAction {
 		
 		return recordList;
 	}
-	public String saveEmployeeAttendanceRecord(int identification,Date time,String name)
-	{
+	private String saveEmployeeAttendanceRecord(int identification,Date time,String name) {
 		List<Object> getfmtList = new ArrayList<Object>();
 	    EmployeeAttendanceRecord recor = new EmployeeAttendanceRecord();
 		recor.setId(identification);
@@ -209,7 +171,7 @@ public class HumanResourceAction extends SuperAction {
 	}
 	
 	
-	public void saveRecordListToDataBase(List<String> recordList) throws Exception {
+	private void saveRecordListToDataBase(List<String> recordList) throws Exception {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Pattern timePattern = Pattern.compile("[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}");
 		Pattern namePattern = Pattern.compile("name=\"(\\S*)\"");
@@ -246,7 +208,6 @@ public class HumanResourceAction extends SuperAction {
 			dao.create(record);
 		}
 		
-		transaction.commit();
 	}
 	
 }
