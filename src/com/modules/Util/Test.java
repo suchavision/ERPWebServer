@@ -19,8 +19,8 @@ public class Test {
 			Date fromDate = simpleDateFormat.parse("2014-11-12 14:50:00");
 			Date toDate = new Date();
 			
-			List<String> recordList = action.getRecordList(fromDate, toDate, "192.168.0.2", "9922");
-			action.saveRecordListToDataBase(recordList);
+//			List<String> recordList = action.getRecordList(fromDate, toDate, "192.168.0.2", "9922");
+//			action.saveRecordListToDataBase(recordList);
 			
 			
 			
